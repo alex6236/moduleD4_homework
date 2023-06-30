@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block title %}
+  {% lorem 4 w %}
+{% endblock %}
+
+{% block content %}
+  <div class="header_top">
+    <h4>{% lorem 4 w random %}</h4>
+    {{ lorem_post.dataCreation }}
+  </div>
+  <p class="text_news">
+    {% lorem 5 b random %}
+  </p>
+{% endblock %}
