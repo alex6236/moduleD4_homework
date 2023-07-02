@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %} 
+    Поиск по сайту
+{% endblock title %}
+
+{% block content %}
+
+<form method="GET" action="{% url 'search' %}">
+    {{ date }}
+    {{ title }}
+    {{ username }}
+    {% comment %} {{ form }} {% endcomment %}
+   
+    <input type="submit" value="Найти">
+</form>
+    
+{% for post in filter.qs %}
+    <p>{{ post.dataCreation|date }}</p>
+    <p>{{ post.title|title }}</p>
+    <p>{{ post.author.authorUser.username }}</p>
+
+{% empty %}
+    <p>Ничего не найдено</p>
+{% endfor %}
+
+{% endblock content %}
+

@@ -20,6 +20,11 @@
     box-shadow: 2px 2px 5px #888;
 }
 
+.upper {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 .text_news {
     font-size: 18px;
     margin-top: 10px;

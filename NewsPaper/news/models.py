@@ -9,7 +9,7 @@ class Author(models.Model):
     ratingAuthor = models.SmallIntegerField(default=0)
     
     def __str__(self):
-        return self.authorUser
+        return self.authorUser.username
 
     def update_rating(self):
         postRat = self.post_set.all().aggregate(postRating=Sum('rating')) or 0
@@ -61,7 +61,7 @@ class Post(models.Model):
         return self.text[:123] + '...'
     
     def __str__(self):
-        return f"Заголовок: {self.title} Дата: {self.dataCreation}"
+        return f"Заголовок: {self.title} Дата: {self.dataCreation} Автор: {self.author.authorUser.username}"
 
 
 class PostCategory(models.Model):
