@@ -10826,3 +10826,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/* Мои стили */
+
+.navbar {
+  --bs-navbar-padding-y: 1rem;
+}
