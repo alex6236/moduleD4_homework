@@ -19,11 +19,13 @@
             <h5 class="upper">{% lorem 4 w random %}</h5>
             {{n.dataCreation|date:'M d Y'}}
         </div>
+        <p class="author">Автор: {{ n.author }}</p>
         {% else %}
         <div class="header_news" onclick="location.href='{% url 'news_detail' pk=n.pk %}'">
             <h5 class="upper">{{ n.title|censor }}</h5>
             {{n.dataCreation|date:'M d Y'}}
         </div>
+        <p class="author">Автор: {{ n.author }}</p>
         {% endif %}
 
         <div class="text_news">
@@ -31,7 +33,7 @@
             {% lorem 30 w random %}
             <a href="{% url 'lorem_post' pk=n.pk %}">Подробнее &raquo;</a>
         {% else %}
-            {{ n.text|truncatechars:50|censor }}
+            {{ n.text|truncatewords:25|censor }}
             <a href="{% url 'news_detail' pk=n.pk %}">Подробнее &raquo;</a>
         {% endif %}
         </div>

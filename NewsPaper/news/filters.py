@@ -7,7 +7,8 @@ class PostFilter(FilterSet):
         model = Post
         fields = {
             'dataCreation': ['gt'], 
-            'title': ['icontains'], 
-            'author__authorUser__username': ['icontains'],
+            'title': ['iregex'], 
+            'author__authorUser__username': ['iregex'],
+            'text': ['iregex'],
         }
         # fields = ('dataCreation', 'title', 'author__authorUser__username')

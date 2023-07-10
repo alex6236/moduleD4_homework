@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'accounts.apps.AccountsConfig',
     'django_filters',
+    'static',
 ]
 
 SITE_ID = 1
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # ====================================================
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'NewsPaper.urls'
@@ -74,6 +76,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # ====================================
+                # 'django_filters.templatetags.django_filters',
             ],
         },
     },
@@ -115,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Europe/Moscow'
 

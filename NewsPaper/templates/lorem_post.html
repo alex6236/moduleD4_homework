@@ -6,10 +6,21 @@
 
 {% block content %}
   <div class="header_top">
-    <h4>{% lorem 4 w random %}</h4>
+    <h5 class="upper">{% lorem 4 w random %}</h5>
     {{ lorem_post.dataCreation }}
   </div>
-  <p class="text_news">
-    {% lorem 5 b random %}
-  </p>
+  <div class="block_text">
+    <p class="text_news">
+      {% lorem 5 b random %}
+    </p>
+  </div>
+  {% comment %} Тут конечно не отредактируешь, все заново создается {% endcomment %}
+  <div class="block_link" >
+    <div class="edit_btn  block_shadow">
+        <a class="edit_link" href="{% url 'edit_post' pk=lorem_post.id %}">Редактировать</a>
+    </div>
+    <div class="delete_btn block_shadow">
+        <a class="delete_link link-body-emphasis" href="{% url 'delete_post' pk=lorem_post.id %}">Удалить</a>
+    </div>
+  </div>
 {% endblock %}
