@@ -20,6 +20,16 @@ class TitleFilterForm(forms.Form):
             'placeholder': 'Поиск по заголовку',
             'class': 'shadow form-control me-2',
         }), required=False)
+    
+class TtextFilterForm(forms.Form):
+    text__iregex = forms.CharField(
+            label='Содержание', 
+            widget=forms.TextInput(attrs={
+            'type': 'text',
+            'name': 'text',
+            'placeholder': 'Поиск по содержанию',
+            'class': 'shadow form-control me-2',
+        }), required=False)
 
 class UsernameFilterForm(forms.Form):
     author__authorUser__username__iregex = forms.CharField(

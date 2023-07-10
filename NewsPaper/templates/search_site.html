@@ -5,15 +5,16 @@
 {% block content %}
 
   <div class="container header_top">
-    <div class="col-lg-4 header_search_form">
+    <div class="col-lg-6 header_search_form">
         <form id="search_form" action="{% url 'search_site' %}" method="GET">
             <p>{{ date }}</p>
             <p>{{ title }}</p>
             <p>{{ username }}</p>
+            <p>{{ text }}</p>
             <input id="search_btn" class="btn btn-outline-success" type="submit" value="Найти">
         </form>
     </div>
-    <div class="col-lg-8 header_search_title text-center">
+    <div class="col-lg-6 header_search_title text-center">
         <h3>Расширенный поиск</h3>
     </div>
 </div>

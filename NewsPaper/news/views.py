@@ -1,17 +1,14 @@
-from urllib import request
-# from django.shortcuts import render, redirect
+# from urllib import request
 from datetime import datetime, timezone
-# from django.views import View
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
 from .models import Post, Author
 from django_filters.views import FilterView
 from .filters import PostFilter
-from .forms import DateFilterForm, TitleFilterForm, UsernameFilterForm, AddPostForm
+from .forms import DateFilterForm, TitleFilterForm, TtextFilterForm, UsernameFilterForm, AddPostForm
 # =========================
 from django.db.models import Q
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-# from django.urls import reverse_lazy
 
 class NewsList(ListView):
     model = Post
@@ -78,6 +75,7 @@ class PostSearch(FilterView):
         context['date'] = DateFilterForm(self.request.GET or None) 
         context['title'] = TitleFilterForm(self.request.GET or None) 
         context['username'] = UsernameFilterForm(self.request.GET or None) 
+        context['text'] = TtextFilterForm(self.request.GET or None) 
         return context
 
     
